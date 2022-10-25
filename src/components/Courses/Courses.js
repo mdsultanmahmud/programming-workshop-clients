@@ -5,10 +5,10 @@ import CourseTitle from '../CourseTitle/CourseTitle';
 const Courses = () => {
     return (
         <div className='flex flex-wrap'>
-            <div className='flex-none'>
+            <div className=''>
                 <CourseTitle></CourseTitle>
             </div>
-            <div className='flex-auto'>
+            <div className=''>
                 <CourseContent></CourseContent>
             </div>
         </div>
