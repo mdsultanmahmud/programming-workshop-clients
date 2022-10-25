@@ -6,7 +6,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 const Login = () => {
     return (
         <>
-            <Form className='w-50 mx-auto shadow-lg p-5 border rounded-lg'>
+            <Form className='mx-auto shadow-lg p-5 border rounded-lg'>
+                <h3 className='text-center text-danger'>Please Login</h3>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />

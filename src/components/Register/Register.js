@@ -9,16 +9,19 @@ const Register = () => {
              <h2 className='text-danger text-center text-uppercase'>Registration with us</h2>
                <hr />
             <div className='form-design'>
-                    <div>
-   
+                    <div>  
                         <img src={regis} alt="" />
                     </div>
                 <div>
 
-                    <Form className='shadow-2xl border p-4 m-4 mx-auto'>
+                    <Form className=' border p-4 m-4 mx-auto'>
                         <Form.Group className="mb-3" >
                             <Form.Label>Your Name</Form.Label>
                             <Form.Control type="text" placeholder="Your Name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" >
+                            <Form.Label>Your Photo</Form.Label>
+                            <Form.Control type="text" placeholder="Photo URL" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>

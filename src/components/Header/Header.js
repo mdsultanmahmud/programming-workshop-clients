@@ -4,7 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/UserContext';
 const Header = () => {
+  const {user} = useContext(AuthContext)
+  console.log(user)
     return (
         <Navbar bg="dark" expand="lg">
           <Container  fluid>
