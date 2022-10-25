@@ -8,7 +8,7 @@ import { AuthContext } from '../../context/UserContext';
 import toast from 'react-hot-toast'
 import './Login.css'
 const Login = () => {
-    const {userLoginWithEmailAndPass, loginWithGoogle} = useContext(AuthContext)
+    const {userLoginWithEmailAndPass, loginWithGoogle, loginWithGithub} = useContext(AuthContext)
 
 
     // login with email and password 
@@ -40,6 +40,20 @@ const Login = () => {
             toast.error(e.message)
         })
     }
+
+    // login with github
+    
+    const handleGithubLogin = () =>{
+        loginWithGithub()
+        .then(res =>{
+            const user = res.user 
+            toast.success('You are login successfully!!!')
+        })
+        .catch(e =>{
+            console.error(e)
+            toast.error(e.message)
+        })
+    }
     return (
         <>
             <Form onSubmit={handleUserLogin} className='mx-auto shadow-lg p-5  rounded-lg customize-form'>
@@ -62,7 +76,7 @@ const Login = () => {
                 <p>Don't have an account?? Please <Link to='/register'>Register</Link></p>
                 <ButtonGroup className='w-100' vertical>
                     <Button onClick={handleGoogleLogin} className='w-100'  variant="outline-danger">Login with Google</Button>
-                    <Button className='w-100'  variant="outline-dark">Login with Github</Button>
+                    <Button onClick={handleGithubLogin} className='w-100'  variant="outline-dark">Login with Github</Button>
                 </ButtonGroup>
             </Form>
 
