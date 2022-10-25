@@ -1,0 +1,15 @@
+.customize-form{
+    margin-top: 2rem;
+    border: 1px solid red;
+    border-radius: 12px;
+}
+
+.customize-form input {
+    border: 1px solid red;
+}
+
+@media screen and (min-width:668px) {
+    .customize-form{
+        width: 50%;
+    }
+}
