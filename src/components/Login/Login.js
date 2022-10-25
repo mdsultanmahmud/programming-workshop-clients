@@ -8,8 +8,10 @@ import { AuthContext } from '../../context/UserContext';
 import toast from 'react-hot-toast'
 import './Login.css'
 const Login = () => {
-    const {userLoginWithEmailAndPass} = useContext(AuthContext)
+    const {userLoginWithEmailAndPass, loginWithGoogle} = useContext(AuthContext)
 
+
+    // login with email and password 
     const handleUserLogin = (event) =>{
         event.preventDefault()
         const form = event.target 
@@ -23,6 +25,20 @@ const Login = () => {
             form.reset()
         })
         .catch(e => console.error(e))
+    }
+
+
+    // login with google sign in method 
+    const handleGoogleLogin = () =>{
+        loginWithGoogle()
+        .then(res =>{
+            const user = res.user 
+            toast.success('You are login successfully!!!')
+        })
+        .catch(e =>{
+            console.error(e)
+            toast.error(e.message)
+        })
     }
     return (
         <>
@@ -45,7 +61,7 @@ const Login = () => {
                 </Button>
                 <p>Don't have an account?? Please <Link to='/register'>Register</Link></p>
                 <ButtonGroup className='w-100' vertical>
-                    <Button className='w-100'  variant="outline-danger">Login with Google</Button>
+                    <Button onClick={handleGoogleLogin} className='w-100'  variant="outline-danger">Login with Google</Button>
                     <Button className='w-100'  variant="outline-dark">Login with Github</Button>
                 </ButtonGroup>
             </Form>

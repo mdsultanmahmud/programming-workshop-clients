@@ -7,8 +7,18 @@ import './Header.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
 import { Button } from 'react-bootstrap'
+import toast from 'react-hot-toast'
 const Header = () => {
-  const { user } = useContext(AuthContext)
+  const { user, logOut} = useContext(AuthContext)
+  const handleLogout = () =>{
+    logOut()
+    .then(res =>{
+      toast.success('You are logout successfully')
+    })
+    .catch(e =>{
+      toast.error(e.message)
+    })
+  }
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
@@ -28,7 +38,7 @@ const Header = () => {
                 <>
                   <Nav.Link className='text-white'>
                     {user.displayName}
-                    <Button className='ms-2' variant="outline-danger">Logout</Button>
+                    <Button onClick={handleLogout} className='ms-2' variant="outline-danger">Logout</Button>
                   </Nav.Link>
                 </>
                 :

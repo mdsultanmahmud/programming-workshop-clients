@@ -41,7 +41,7 @@ const Register = () => {
 
 
     return (
-        <div>
+        <div className='m-2'>
              <h2 className='text-danger text-center text-uppercase'>Registration with us</h2>
                <hr />
             <div className='form-design'>
@@ -50,28 +50,28 @@ const Register = () => {
                     </div>
                 <div>
 
-                    <Form onSubmit={hendleRegister} className=' border p-4 m-4 mx-auto'>
+                    <Form onSubmit={hendleRegister} className='border rounded shadow-lg border-danger p-4 m-4'>
                         <Form.Group className="mb-3" >
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control name='name' type="text" placeholder="Your Name" />
+                            <Form.Control className='border border-danger' name='name' type="text" placeholder="Your Name" />
                         </Form.Group>
                         <Form.Group className="mb-3" >
                             <Form.Label>Your Photo</Form.Label>
-                            <Form.Control name='photourl' type="text" placeholder="Photo URL" />
+                            <Form.Control className='border border-danger' name='photourl' type="text" placeholder="Photo URL" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control name='email' type="email" placeholder="Enter email" />
+                            <Form.Control className='border border-danger' name='email' type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control name='password' type="password" placeholder="Password" />
+                            <Form.Control className='border border-danger' name='password' type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
-                        <Button variant="danger" type="submit">
+                        <Button className='px-4' variant="danger" type="submit">
                             Register
                         </Button>
                     </Form></div>
