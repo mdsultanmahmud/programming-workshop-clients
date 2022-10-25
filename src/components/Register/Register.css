@@ -1,0 +1,16 @@
+.form-design{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 10px;
+}
+
+.form-design img{
+    height: 380px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:668px) {
+    .form-design{
+        grid-template-columns: 1fr;
+    }
+}
