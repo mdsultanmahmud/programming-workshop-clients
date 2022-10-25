@@ -8,7 +8,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
 const Header = () => {
   const {user} = useContext(AuthContext)
-  console.log(user)
     return (
         <Navbar bg="dark" expand="lg">
           <Container  fluid>

@@ -1,9 +1,45 @@
 import React from 'react';
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../../context/UserContext';
 import regis from '../../image/registration.jpg'
+import toast from 'react-hot-toast';
 import './Register.css'
 const Register = () => {
+    const {createUser, updateUserProfile} = useContext(AuthContext)
+
+    // created user 
+    const hendleRegister = (event) =>{
+        event.preventDefault()
+        const form = event.target 
+        const name = form.name.value 
+        const photourl = form.photourl.value 
+        const email = form.email.value 
+        const password = form.password.value 
+        const profile = {
+            displayName:name,
+            photoURL:photourl
+        }
+        createUser(email, password)
+        .then(res =>{
+            const user = res.user 
+            // update user profile here
+            updateUserProfile(profile)
+            .then(res =>{
+                //user profile successfully updated
+            })
+            .catch(e =>{
+                console.error(e)
+            })
+            console.log(user)
+            toast.success('Your are successfully created an account!!')
+            form.reset()
+        })
+        .catch(e => console.error(e))
+    }
+
+
     return (
         <div>
              <h2 className='text-danger text-center text-uppercase'>Registration with us</h2>
@@ -14,23 +50,23 @@ const Register = () => {
                     </div>
                 <div>
 
-                    <Form className=' border p-4 m-4 mx-auto'>
+                    <Form onSubmit={hendleRegister} className=' border p-4 m-4 mx-auto'>
                         <Form.Group className="mb-3" >
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="text" placeholder="Your Name" />
+                            <Form.Control name='name' type="text" placeholder="Your Name" />
                         </Form.Group>
                         <Form.Group className="mb-3" >
                             <Form.Label>Your Photo</Form.Label>
-                            <Form.Control type="text" placeholder="Photo URL" />
+                            <Form.Control name='photourl' type="text" placeholder="Photo URL" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control name='email' type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control name='password' type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
