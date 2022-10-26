@@ -40,10 +40,10 @@ const Header = () => {
           </Nav>
           <Nav>
             {
-              user?.displayName ?
+              user?.photoURL ?
                 <>
                   <Nav.Link className='text-white'>
-                    {user.displayName}
+                    <img title={user?.displayName} style={{width:'40px',height:'40px', borderRadius:'50%', marginRight:'5px'}} src={user?.photoURL} alt="" />
                     <Button onClick={handleLogout} className='ms-2' variant="outline-danger">Logout</Button>
                   </Nav.Link>
                 </>
