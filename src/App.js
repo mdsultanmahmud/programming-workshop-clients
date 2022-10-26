@@ -10,6 +10,8 @@ import Blog from './components/Blog/Blog';
 import FAQ from './components/FAQ/FAQ';
 import { Toaster } from 'react-hot-toast';
 import CourseDetails from './components/CourseDetails/CourseDetails';
+import Checkout from './components/Checkout/Checkout';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 function App() {
   const router = createBrowserRouter([
       {
@@ -45,6 +47,11 @@ function App() {
           {
             path:'/faq',
             element:<FAQ></FAQ>
+          },
+          {
+            path:'/checkout/:id',
+            element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
+            loader:({params}) => fetch(`https://programming-workshop-server.vercel.app/courses/${params.id}`)
           }
         ]
       }

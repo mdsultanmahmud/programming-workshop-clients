@@ -8,31 +8,37 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
 import { Button } from 'react-bootstrap'
 import toast from 'react-hot-toast'
+import brand from '../../image/brand.jpg'
 const Header = () => {
-  const { user, logOut} = useContext(AuthContext)
-  const handleLogout = () =>{
+  const { user, logOut } = useContext(AuthContext)
+  const handleLogout = () => {
     logOut()
-    .then(res =>{
-      toast.success('You are logout successfully')
-    })
-    .catch(e =>{
-      toast.error(e.message)
-    })
+      .then(res => {
+        toast.success('You are logout successfully')
+      })
+      .catch(e => {
+        toast.error(e.message)
+      })
   }
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand > <Link className='brand-customize' to={'/'}><span className='brand-first'>Programming</span> Workshop</Link> </Navbar.Brand>
+        <Navbar.Brand >
+        <img style={{width:'40px',height:'40px', borderRadius:'50%', marginRight:'5px'}} src={brand} alt="" />
+          <Link className='brand-customize' to={'/'}><span className='brand-first'>Programming</span> Workshop</Link>
+        </Navbar.Brand>
         <Navbar.Toggle className='bg-white' aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse className='customize-link' id="navbarScroll">
           <Nav
-            className="ms-auto my-2 my-lg-0 customize-link"
+            className="mx-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
             <Nav.Link ><Link to={'/courses'}>Courses</Link></Nav.Link>
             <Nav.Link ><Link to={'/faq'}>FAQ</Link></Nav.Link>
             <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>
+          </Nav>
+          <Nav>
             {
               user?.displayName ?
                 <>

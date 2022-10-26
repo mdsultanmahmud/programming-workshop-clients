@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
@@ -9,8 +9,9 @@ import toast from 'react-hot-toast'
 import './Login.css'
 const Login = () => {
     const {userLoginWithEmailAndPass, loginWithGoogle, loginWithGithub} = useContext(AuthContext)
-
-
+    const location = useLocation()
+    const from =  location.state?.from?.pathname || "/"
+    const navigate = useNavigate()
     // login with email and password 
     const handleUserLogin = (event) =>{
         event.preventDefault()
@@ -23,6 +24,7 @@ const Login = () => {
             console.log(user)
             toast.success('You are successfully login')
             form.reset()
+            navigate(from, { replace: true })
         })
         .catch(e => console.error(e))
     }
@@ -34,6 +36,7 @@ const Login = () => {
         .then(res =>{
             const user = res.user 
             toast.success('You are login successfully!!!')
+            navigate(from, { replace: true })
         })
         .catch(e =>{
             console.error(e)
@@ -48,6 +51,7 @@ const Login = () => {
         .then(res =>{
             const user = res.user 
             toast.success('You are login successfully!!!')
+            navigate(from, { replace: true })
         })
         .catch(e =>{
             console.error(e)

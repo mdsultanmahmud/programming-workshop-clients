@@ -9,6 +9,7 @@ const CourseDetails = () => {
     console.log(course)
     return (
         <div className='course-details'>
+            <h3 className='text-center text-primary my-3'>Learning About {name}   <Button className='ms-2' variant="outline-info" size="sm">Download PDF</Button></h3>
             <img className='img-fluid' src={picture} alt="" />
             <h2><strong>Course Name: </strong> {name}</h2>
             <h3><strong>Course Title: </strong> {title}</h3>
@@ -20,7 +21,7 @@ const CourseDetails = () => {
                 <p className='text-muted text-uppercase'><strong>Total Time: </strong>{timeDuration}h</p>
                 <p className='text-muted text-uppercase'><strong>Ratings: </strong>{ratings}</p>
             </div>
-            <Button className='w-50 my-3 mx-auto d-block' variant="outline-danger"><Link >Add To Cart</Link></Button>
+            <Button  className='w-50 my-3 mx-auto d-block' variant="outline-danger"><Link to={`/checkout/${index}`}>Get Premium Access</Link></Button>
         </div>
     );
 };

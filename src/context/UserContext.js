@@ -11,34 +11,41 @@ export const AuthContext = createContext()
 const auth = getAuth(app)
 const UserContext = ({children}) => {
     const [user ,setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     //create a user
     const createUser = (email, password) =>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     //update user profile
     const updateUserProfile = (profile) =>{
+        setLoading(true)
         return updateProfile(auth.currentUser,profile )
     }
 
     //user login 
     const userLoginWithEmailAndPass = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // user logout 
     const logOut =  () =>{
+        setLoading(true)
         return signOut(auth)
     }
 
     // login with google
     const loginWithGoogle = () =>{
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     //login with github
     const loginWithGithub = () =>{
+        setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
     // get current user 
@@ -47,10 +54,12 @@ const UserContext = ({children}) => {
             if(currentUser){
                 console.log('current user', currentUser)
                 setUser(currentUser)
+                setLoading(false)
 
             }else{
                 console.log('current kono user nai')
                 setUser({})
+                setLoading(false)
             }
         })
 
