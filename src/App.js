@@ -9,6 +9,7 @@ import Register from './components/Register/Register';
 import Blog from './components/Blog/Blog';
 import FAQ from './components/FAQ/FAQ';
 import { Toaster } from 'react-hot-toast';
+import CourseDetails from './components/CourseDetails/CourseDetails';
 function App() {
   const router = createBrowserRouter([
       {
@@ -21,7 +22,12 @@ function App() {
           },
           {
             path:'/courses',
-            element:<Courses></Courses>
+            element:<Courses></Courses>,
+            loader:() => fetch('https://programming-workshop-server.vercel.app/courses')
+          },
+          {
+            path:'/courses/:id',
+            element:<CourseDetails></CourseDetails>
           },
           {
             path:'/login',
