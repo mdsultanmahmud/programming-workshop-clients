@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom'
 const CourseContent = ({course}) => {
     const {index, name, picture, balance,ratings,title,lecture,about,timeDuration } = course 
-    console.log(course)
     return (
         <Card className='shadow-lg'>
           <Card.Img style={{height:'200px'}} variant="top" src={picture} />

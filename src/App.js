@@ -27,7 +27,8 @@ function App() {
           },
           {
             path:'/courses/:id',
-            element:<CourseDetails></CourseDetails>
+            element:<CourseDetails></CourseDetails>,
+            loader:({params}) => fetch(`https://programming-workshop-server.vercel.app/courses/${params.id}`)
           },
           {
             path:'/login',
