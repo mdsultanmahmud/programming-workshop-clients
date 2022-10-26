@@ -9,6 +9,7 @@ import { AuthContext } from '../../context/UserContext';
 import { Button } from 'react-bootstrap'
 import toast from 'react-hot-toast'
 import brand from '../../image/brand.jpg'
+import ReactSwitch from 'react-switch';
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
   const handleLogout = () => {
@@ -20,6 +21,8 @@ const Header = () => {
         toast.error(e.message)
       })
   }
+
+
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
@@ -37,6 +40,7 @@ const Header = () => {
             <Nav.Link ><Link to={'/courses'}>Courses</Link></Nav.Link>
             <Nav.Link ><Link to={'/faq'}>FAQ</Link></Nav.Link>
             <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>
+            <Nav.Link><ReactSwitch></ReactSwitch></Nav.Link>
           </Nav>
           <Nav>
             {

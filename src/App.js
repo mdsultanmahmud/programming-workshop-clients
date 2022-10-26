@@ -12,11 +12,13 @@ import { Toaster } from 'react-hot-toast';
 import CourseDetails from './components/CourseDetails/CourseDetails';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 function App() {
   const router = createBrowserRouter([
       {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
           {
             path:'/',
