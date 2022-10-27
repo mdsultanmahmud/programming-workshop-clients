@@ -16,3 +16,22 @@
     color: white;
 }
 
+.demo-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+@media screen and (max-width:668px) {
+    .demo-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+.single-project{
+    transition: all 0.2s ease-in-out;
+}
+.single-project:hover {
+    transform: translateY(-10px);
+}

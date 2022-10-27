@@ -22,7 +22,8 @@ function App() {
         children:[
           {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:() => fetch('https://programming-workshop-server.vercel.app/project')
           },
           {
             path:'/courses',

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='mt-5 row link-container'>
             <div className='col-sm-12 col-md-6 col-lg-4 p-5'>
                 <h4 className='text-white text-center'>Programming Workshop</h4>
-                <hr />
+                <hr className='hor-line'></hr>
                 <address className='text-muted'>
                 329 Queensberry Street, North Melbourne VIC 3051, Australia.
                 <br />
@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
             <div className='col-sm-12 col-md-6 col-lg-4 p-5'>
                 <h4 className='text-white text-center'>Topics</h4>
-                <hr />
+                <hr className='hor-line'></hr>
                     <Link>HTML</Link>
                     <br />
                     <Link>CSS</Link>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             <div className='col-sm-12 col-md-6 col-lg-4 p-5'>
                 <h4 className='text-white text-center'>Support</h4>
-                <hr />
+                <hr className='hor-line'></hr>
                     <Link>Documentation</Link>
                     <br />
                     <Link>Forums</Link>

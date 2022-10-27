@@ -27,7 +27,7 @@ const Checkout = () => {
                     <p className='text-danger'><strong>Your Email:</strong> {user?.email}</p>
                 </div>
             </div>
-            <Button disabled className='w-50 d-block mx-auto' variant="outline-danger">Add To Cart</Button>
+            <Button disabled className='w-50 d-block mx-auto' variant="danger">Add To Cart</Button>
         </div>
     );
 };
