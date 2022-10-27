@@ -40,15 +40,15 @@ const Header = () => {
           >
             <Nav.Link ><Link to={'/courses'}>Courses</Link></Nav.Link>
             <Nav.Link ><Link to={'/faq'}>FAQ</Link></Nav.Link>
-            <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>           
-           <Form className='mt-2 ms-lg-2'>
-                <Form.Check
-                  type="switch"
-                  id="custom-switch"
-                />              
-              </Form>
+            <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>
+            <Form className='mt-2 ms-lg-2'>
+              <Form.Check
+                type="switch"
+                id="custom-switch"
+              />
+            </Form>
           </Nav>
-          
+
           <Nav>
             {
               user?.photoURL ?
@@ -61,6 +61,8 @@ const Header = () => {
                 :
                 <Nav.Link ><Link to={'/login'}><Button variant="outline-danger">Login</Button></Link></Nav.Link>
             }
+
+            <Nav.Link ><Link to={'/register'}><Button variant="outline-success">Register</Button></Link></Nav.Link>
           </Nav>
 
         </Navbar.Collapse>
