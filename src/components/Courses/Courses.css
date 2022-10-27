@@ -47,10 +47,10 @@
 }
 
 .course-name:hover > a{
-    color: rgb(248, 132, 149);
+    color: rgb(245, 7, 42);
 }
 
 .course-name:hover{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
     cursor: pointer;
 }

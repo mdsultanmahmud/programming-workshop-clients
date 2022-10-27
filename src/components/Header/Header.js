@@ -25,10 +25,10 @@ const Header = () => {
 
 
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar className='shadow-lg' bg="white" expand="lg">
       <Container fluid>
         <Navbar.Brand >
-          <img style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '5px' }} src={brand} alt="" />
+          <img style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '5px', border:'1px solid black' }} src={brand} alt="" />
           <Link className='brand-customize' to={'/'}><span className='brand-first'>Programming</span> Workshop</Link>
         </Navbar.Brand>
         <Navbar.Toggle className='bg-white' aria-controls="navbarScroll" />

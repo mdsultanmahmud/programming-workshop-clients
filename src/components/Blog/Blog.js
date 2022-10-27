@@ -6,7 +6,7 @@ import blogFour from '../../image/node.png'
 const Blog = () => {
     return (
         <div className='container'>
-            <div className="blog-item border shadow-sm rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
+            <div className="blog-item  border shadow-lg rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
                 <div className='w-100'>
                     <img className='mx-auto d-block' style={{ width: '90%' }} src={blogOne} alt="" />
                 </div>
@@ -20,7 +20,7 @@ const Blog = () => {
 
 
 
-            <div className="blog-item border shadow-sm rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
+            <div className="blog-item  border shadow-lg rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
                 <div className='w-100'>
                     <h4 className='text-muted'> Why are you using firebase? What other options do you have to implement authentication?</h4>
                     <p>
@@ -37,7 +37,7 @@ const Blog = () => {
             </div>
 
 
-            <div className="blog-item border shadow-sm rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
+            <div className="blog-item  border shadow-lg rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
                 <div className='w-100'>
                     <img className='mx-auto d-block' style={{ width: '90%' }} src={blogThree} alt="" />
                 </div>
@@ -54,7 +54,7 @@ const Blog = () => {
 
 
 
-            <div className="blog-item border shadow-sm rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
+            <div className="blog-item  border shadow-lg rounded p-3 my-4 d-md-flex d-sm-block align-items-center">
                 <div className='w-100'>
                     <h4 className='text-muted'> What is Node? How does Node work?</h4>
                     <p>

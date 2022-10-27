@@ -12,15 +12,15 @@ const Home = () => {
             {/* main page design  */}
             <div style={{ width: '100vw' }} className='d-sm-block d-md-flex align-items-center column-reverse my-5'>
                 <div className='w-100 p-3'>
-                    <img style={{ width: '100%', height: '350px' }} src={home} alt="" />
+                    <img style={{ width: '90%', height: '350px' }} src={home} alt="" />
                 </div>
                 <div className='w-100 p-3'>
-                    <h4 className='text-danger text-uppercase home-title'>Learn From Programming Workshop</h4>
+                    <h4 className='text-danger text-center text-uppercase home-title'>Learn From Programming Workshop</h4>
                     <p className='home-para'>
                         Technology Is Bringing A Massive Wave Of Evolution On Learning Things In Different Ways.
                     </p>
-                    <Button className='w-50 ' variant="outline-danger">Get Started</Button>
-                    <Button className='w-50' variant="outline-dark"><Link className='link' to='/courses'>View Courses</Link></Button>
+                    <Button className=' px-5 mb-2 mx-lg-3 ' variant="outline-danger">Get Started</Button>
+                    <Button className=' px-5' variant="outline-dark"><Link className='link' to='/courses'>View Courses</Link></Button>
                 </div>
             </div>
             <div>

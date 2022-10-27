@@ -67,7 +67,7 @@ const Login = () => {
     }
     return (
         <>
-            <Form onSubmit={handleUserLogin} className='mx-auto shadow-lg p-5  rounded-lg customize-form'>
+            <Form onSubmit={handleUserLogin} className='mx-auto shadow-lg p-5 border  rounded-lg customize-form'>
                 <h3 className='text-center text-danger'>Please Login</h3>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

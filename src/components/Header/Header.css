@@ -1,6 +1,7 @@
 .customize-link a{
     text-decoration: none;
-    color: white;
+    color: black;
+    font-weight: 500;
 }
 .customize-link a:hover{
     color: red;
@@ -8,7 +9,12 @@
 
 .brand-customize{
     text-decoration: none;
-    color: white;
+    color: green;
+    font-weight: 600;
+}
+
+.brand-customize:hover{
+    color: green;
 }
 
 .brand-first{
