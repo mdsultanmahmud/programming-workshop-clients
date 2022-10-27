@@ -2,9 +2,11 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.css'
+import ScrollToTop from "react-scroll-to-top";
 const Footer = () => {
     return (
         <div  className='mt-5 row link-container'>
+            
             <div className='col-sm-12 col-md-6 col-lg-4 p-5'>
                 <h4 className='text-white text-center'>Programming Workshop</h4>
                 <hr className='hor-line'></hr>
@@ -54,6 +56,7 @@ const Footer = () => {
                         <FaInstagram className='icon'> </FaInstagram>
                         <FaWhatsapp  className='icon'></FaWhatsapp>
                         <FaLinkedin  className='icon'></FaLinkedin>
+                        <ScrollToTop smooth />
                     </div>
             </div>
         </div>
