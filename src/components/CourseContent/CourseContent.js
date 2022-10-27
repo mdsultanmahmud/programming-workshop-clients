@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const CourseContent = ({course}) => {
     const {index, name, picture, balance,ratings,title,lecture,about,timeDuration } = course 
     return (
-        <Card className='shadow-lg'>
+        <Card data-aos='fade-up' data-aos-duration='3000' className='shadow-lg'>
           <Card.Img style={{height:'200px'}} variant="top" src={picture} />
           <Card.Body>
             <Card.Title className='text-danger'>{name}</Card.Title>

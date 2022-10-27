@@ -5,7 +5,7 @@ const CourseDemo = ({project}) => {
     const {balance, picture, name, title} = project
     console.log(project)
     return (
-        <div className='single-project'>
+        <div data-aos='zoom-in' className='single-project'>
             <Card className='shadow-lg'>
                 <Card.Img style={{width:'80%', height:'300px', margin:'10px auto'}} variant="top" src={picture} />
                 <Card.Body>

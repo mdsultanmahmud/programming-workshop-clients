@@ -13,7 +13,15 @@ import CourseDetails from './components/CourseDetails/CourseDetails';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 function App() {
+  useEffect(() =>{
+    AOS.init({
+        duration:2000
+    })
+},[])
   const router = createBrowserRouter([
       {
         path:'/',
