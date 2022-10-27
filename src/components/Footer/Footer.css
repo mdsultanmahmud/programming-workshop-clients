@@ -1,0 +1,21 @@
+.link-container{
+    background-color: black;
+}
+.link-container a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-container a:hover{
+    color: red;
+}
+
+.icon{
+    font-size: 25px;
+    color: white;
+}
+.icon:hover{
+    color: red;
+    cursor: pointer;
+}
