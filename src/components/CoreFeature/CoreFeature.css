@@ -1,0 +1,17 @@
+.feature-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+}
+
+
+@media screen and (max-width:992px) {
+    .feature-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width:668px) {
+    .feature-container{
+        grid-template-columns: 1fr;
+    }
+}

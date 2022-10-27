@@ -2,6 +2,9 @@
     text-decoration: none;
     color: white;
 }
+.customize-link a:hover{
+    color: red;
+}
 
 .brand-customize{
     text-decoration: none;

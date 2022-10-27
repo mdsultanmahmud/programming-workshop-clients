@@ -3,7 +3,10 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './Checkout.css'
 import Button from 'react-bootstrap/Button';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/UserContext';
 const Checkout = () => {
+    const {user} = useContext(AuthContext)
     const course = useLoaderData()
     const { index, name, picture, balance, ratings, title, lecture, about, timeDuration, authorName } = course
     return (
@@ -19,8 +22,12 @@ const Checkout = () => {
                     <p className='text-white'><strong>Lecture:</strong> {lecture}</p>
                     <p className='text-white'><strong>Instructor:</strong> {authorName}</p>
                 </div>
+                <div>
+                    <p className='text-danger'><strong>Your Name:</strong> {user?.displayName}</p>
+                    <p className='text-danger'><strong>Your Email:</strong> {user?.email}</p>
+                </div>
             </div>
-            <Button className='w-50 d-block mx-auto' variant="outline-danger">Add To Cart</Button>
+            <Button disabled className='w-50 d-block mx-auto' variant="outline-danger">Add To Cart</Button>
         </div>
     );
 };

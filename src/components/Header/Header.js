@@ -10,6 +10,7 @@ import { Button } from 'react-bootstrap'
 import toast from 'react-hot-toast'
 import brand from '../../image/brand.jpg'
 import ReactSwitch from 'react-switch';
+import Form from 'react-bootstrap/Form';
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
   const handleLogout = () => {
@@ -27,7 +28,7 @@ const Header = () => {
     <Navbar bg="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand >
-        <img style={{width:'40px',height:'40px', borderRadius:'50%', marginRight:'5px'}} src={brand} alt="" />
+          <img style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '5px' }} src={brand} alt="" />
           <Link className='brand-customize' to={'/'}><span className='brand-first'>Programming</span> Workshop</Link>
         </Navbar.Brand>
         <Navbar.Toggle className='bg-white' aria-controls="navbarScroll" />
@@ -39,20 +40,26 @@ const Header = () => {
           >
             <Nav.Link ><Link to={'/courses'}>Courses</Link></Nav.Link>
             <Nav.Link ><Link to={'/faq'}>FAQ</Link></Nav.Link>
-            <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>
-            <Nav.Link><ReactSwitch></ReactSwitch></Nav.Link>
+            <Nav.Link ><Link to={'/blog'}>Blog</Link></Nav.Link>           
+           <Form className='mt-2 ms-lg-2'>
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                />              
+              </Form>
           </Nav>
+          
           <Nav>
             {
               user?.photoURL ?
                 <>
                   <Nav.Link className='text-white'>
-                    <img title={user?.displayName} style={{width:'40px',height:'40px', borderRadius:'50%', marginRight:'5px'}} src={user?.photoURL} alt="" />
+                    <img title={user?.displayName} style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '5px' }} src={user?.photoURL} alt="" />
                     <Button onClick={handleLogout} className='ms-2' variant="outline-danger">Logout</Button>
                   </Nav.Link>
                 </>
                 :
-                <Nav.Link ><Link to={'/login'}>Login</Link></Nav.Link>
+                <Nav.Link ><Link to={'/login'}><Button variant="outline-danger">Login</Button></Link></Nav.Link>
             }
           </Nav>
 
